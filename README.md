@@ -19,6 +19,11 @@ add the decision to an appropirate knowledge base (e.g. a product like
 [Notion](https://notion.so), etc. So that the decision is easily documented, searchable and
 discoverable by team mates in the future.
 
+### Video
+
+For a video explanation of how this work flow works,
+[watch this video](https://youtu.be/vGQY95IZpLo)
+
 ## Contributing
 
 Please hit us up with Issues to ask questions, bugs, enhancements, or Pull Requests if you
