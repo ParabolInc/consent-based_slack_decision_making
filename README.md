@@ -24,6 +24,42 @@ discoverable by team mates in the future.
 For a video explanation of how this work flow works,
 [watch this video](https://youtu.be/vGQY95IZpLo)
 
+## Technical notes
+
+This workflow also emits newline-delimited data on a private channel (in our instance,
+`governance_zapier`) for easy integration with [Zapier](https://zapier.com).  This
+allows us to set up automations around the creation, progress, and completion of
+consent decisions.
+
+Data is formatted as:
+
+
+```
+thread_location_parameters
+written_proposal_url
+author_name
+proposal_channel
+proposal_title
+consent_decision_round
+```
+
+For example:
+
+```
+channel_id=C3X4KU0NM&ts=1633394616.041500
+https://docs.google.com/document/d/18s_o3Jx5ML61sd5FVyLlHxwYL2-B8Tfc9C9Fr1Qakh0/edit#
+@jrhusney
+#t_exco_gov
+2021 Q4 Strategy
+Clarifying Questions
+```
+
+
+
+## Change Log
+
+See the repository's [CHANGELOG.md](./CHANGELOG.md).
+
 ## Contributing
 
 Please hit us up with Issues to ask questions, bugs, enhancements, or Pull Requests if you

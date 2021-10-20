@@ -1,238 +1,1549 @@
 {
-  "source_id": "286574144957461307",
-  "version": "1",
-  "workflow": {
-    "name": "Consent-based Governance Public",
-    "blueprint": {
-      "version": "1",
-      "trigger": {
-        "type": "channel_action",
-        "id": "c63bdcf6-a658-4eca-81f1-5533b4fffe06",
-        "config": {
-          "name": "Consent-based Governance",
-          "channels": [
-            "CT5PJ469J"
-          ],
-          "callback_id": "0b83fa92-f4cc-4142-ad1d-081e28c52610",
-          "description": "Consent-based Governance"
-        }
-      },
-      "steps": [
-        {
-          "type": "message",
-          "id": "b62fab14-9d68-4a5f-9d08-637276198a50",
-          "config": {
-            "channel": {
-              "ref": "c63bdcf6-a658-4eca-81f1-5533b4fffe06==channel"
-            },
-            "has_button": false,
-            "message_text": ":female-judge: Hey {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} , go check ❤ Slackbot for next steps"
-          }
-        },
-        {
-          "type": "message",
-          "id": "2dcba2e9-0e22-413c-b6d0-3bff4fe59f85",
-          "config": {
-            "user": {
-              "ref": "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
-            },
-            "has_button": false,
-            "message_text": ":female-judge: _In case you need refreshing, here’s how to run the Slack-based async consent-based decision making process:_\n\n:link: https://youtu.be/vGQY95IZpLo"
-          }
-        },
-        {
-          "type": "dialog",
-          "id": "e994019f-ff7d-47d6-aa45-d12bc234d74a",
-          "config": {
-            "user": {
-              "ref": "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
-            },
-            "dialog_title": "Consent-based Proposal",
-            "dialog_elements": [
-              {
-                "name": "21e6196e-baf5-492f-aafc-bda010c1c735",
-                "type": "select",
-                "label": "Which channel & team is your proposal for?",
-                "value": "CM1TUSMSS",
-                "optional": false,
-                "data_source": "channels"
-              },
-              {
-                "name": "0ed7d56b-4cbc-4637-ac12-61fd03034f6c",
-                "type": "textarea",
-                "label": "What is the background of your tension?",
-                "optional": false
-              },
-              {
-                "name": "6be0a3f5-1494-4d06-9fb0-d04b673228df",
-                "type": "text",
-                "label": "Link to proposal document:",
-                "subtype": "",
-                "optional": false,
-                "placeholder": ""
-              }
-            ],
-            "dialog_submit_label": "",
-            "delivery_button_label": "Open Form",
-            "delivery_message_text": "To propose something, please fill out this :pencil: . It’s _super_ brief."
-          }
-        },
-        {
-          "type": "message",
-          "id": "8f4a322f-3782-4486-8eb2-252b2d0208f1",
-          "config": {
-            "channel": {
-              "ref": "c63bdcf6-a658-4eca-81f1-5533b4fffe06==channel"
-            },
-            "has_button": false,
-            "message_text": ":female-judge: _New decision started by {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} in {{e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel}} concerning the following matter:_\n\n&gt; {{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\n\n_Go check it out!_"
-          }
-        },
-        {
-          "type": "message",
-          "id": "18005004-ae5b-4bb9-99f9-df47b919ab47",
-          "config": {
-            "channel": {
-              "ref": "e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel"
-            },
-            "has_button": false,
-            "message_text": ":female-judge: _hear ye, hear ye – we have a new consent-based decision to make brought to us by {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} . I’ll lead us through making the decision._\n\n:question: _Need a refresher on how to participate in async governance? See:_ https://app.getguru.com/card/yiy8xKni/ExCo-Policy-Proposing-Asynchronous-Governance-\n\n_I’ll lead us through:_\n   * _Tension background &amp; proposal_\n   * _Asking clarifying questions_\n   * _Reacting_\n   * _Recording objections_\n\n_Here’s the background {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}}  shared on why they are bringing this proposal._\n\n\n:speech_balloon: *Background*\n&gt;{{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\n\n\n_And, here’s a link to the written proposal:_\n\n\n:link:  {{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}\n\n\n_Governance will proceed in this thread_ :point_down:"
-          }
-        },
-        {
-          "type": "message",
-          "id": "27fb5f6d-1da8-4783-aad6-eeaa5cad98aa",
-          "config": {
-            "thread": {
-              "ref": "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data"
-            },
-            "has_button": false,
-            "message_text": ":female-judge: _Let’s begin by asking clarifying questions._\n\n_What questions do you have that could help you understand {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} ’s tensions or proposal better?_\n\n:nerd_face: _your questions should clarify, not socratically introduce new suggestions or ideas. Save those for your own proposal!_\n\n\n*Clarifying Questions* :point_down:"
-          }
-        },
-        {
-          "type": "message",
-          "id": "94b73fd5-e6a3-4c7d-a386-c3d574ec23fa",
-          "config": {
-            "user": {
-              "ref": "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
-            },
-            "has_button": true,
-            "button_label": "Proceed to Reactions",
-            "message_text": ":female-judge: _When you’re ready to continue your decision pertaining to…_\n&gt; {{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\n_…click the button below:_"
-          }
-        },
-        {
-          "type": "message",
-          "id": "c3069ab8-0b7c-4d1a-8527-946e6dc4f253",
-          "config": {
-            "thread": {
-              "ref": "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data"
-            },
-            "has_button": false,
-            "message_text": ":female-judge: _ok, {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} has told me it’s time to move on to collecting reactions_.\n\n_What are your reactions to this proposal? You can say anything you wish._\n\n*Reactions* :point_down:"
-          }
-        },
-        {
-          "type": "message",
-          "id": "c28ffeb1-cb89-48f9-bd4b-ad05995af853",
-          "config": {
-            "user": {
-              "ref": "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
-            },
-            "has_button": true,
-            "button_label": "Proceed to Amend & Clarify",
-            "message_text": ":female-judge: _When you’re ready to continue your decision pertaining to…_\n&gt; {{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\n_…click the button below:_"
-          }
-        },
-        {
-          "type": "dialog",
-          "id": "db19a140-6b9b-40f5-908f-51525c47cc56",
-          "config": {
-            "user": {
-              "ref": "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
-            },
-            "dialog_title": "Clarifications",
-            "dialog_elements": [
-              {
-                "name": "d48ab143-b24b-4271-adc7-a1f3a17cf409",
-                "type": "textarea",
-                "label": "Summarize changes to your proposal, if any:",
-                "optional": false
-              }
-            ],
-            "dialog_submit_label": "",
-            "delivery_button_label": "Continue",
-            "delivery_message_text": ":female-judge: _Please edit your original proposal ({{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}) and when you’re finished, please click the button to continue:_"
-          }
-        },
-        {
-          "type": "message",
-          "id": "04c74fde-e9b2-470c-95dc-2e43cb4baf63",
-          "config": {
-            "thread": {
-              "ref": "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data"
-            },
-            "has_button": false,
-            "message_text": ":female-judge: _{{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} has heard your questions and reactions and has provided the following summary of changes made to their original proposal:_\n\n&gt; {{db19a140-6b9b-40f5-908f-51525c47cc56==d48ab143-b24b-4271-adc7-a1f3a17cf409==text}}\n\n:female-judge::skin-tone-3::exclamation: _*Are there any objections as to why this propsal wouldn’t be safe to try?* If you don’t have an objections, please add the :no_entry_sign: reactji to this post. Otherwise, please respond as…_\n\n&gt; I object!\n\n_…and {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} can repropose this decision during a synchronous meeting_"
-          }
-        },
-        {
-          "type": "dialog",
-          "id": "211d6544-b4b3-4a55-a7e9-ccfcff02dabd",
-          "config": {
-            "user": {
-              "ref": "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
-            },
-            "dialog_title": "Consent Conclusion",
-            "dialog_elements": [
-              {
-                "name": "e894375d-33b5-47e0-a668-66f1e51f2522",
-                "type": "select",
-                "label": "Where there any objections to your proposal?",
-                "value": "No objections – decision accepted",
-                "options": [
-                  {
-                    "label": "No objections – decision accepted",
-                    "value": "No objections – decision accepted"
+   "source_id" : "375111273177691001",
+   "version" : "1",
+   "workflow" : {
+      "blueprint" : {
+         "steps" : [
+            {
+               "config" : {
+                  "channel" : {
+                     "ref" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==channel"
                   },
-                  {
-                    "label": "There were objectons – will resolve later",
-                    "value": "There were objectons – will resolve later"
+                  "has_button" : false,
+                  "message_text" : ":female-judge: Hey {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} , go check â¤ Slackbot for next steps"
+               },
+               "id" : "b62fab14-9d68-4a5f-9d08-637276198a50",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "name" : "female-judge",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "In case you need refreshing, hereâs how to run the Slack-based async consent-based decision making process:",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "link",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "type" : "link",
+                                    "url" : "https://www.parabol.co/blog/async-decision-making-slack"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : ":female-judge: In case you need refreshing, hereâs how to run the Slack-based async consent-based decision making process:\n\n:link: https://www.parabol.co/blog/async-decision-making-slack",
+                  "user" : {
+                     "ref" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
                   }
-                ],
-                "optional": false,
-                "data_source": "static"
-              }
-            ],
-            "dialog_submit_label": "",
-            "delivery_button_label": "Finish Consent Decision",
-            "delivery_message_text": ":female-judge:  _When you feel you’ve given an adequate amount of time for objections, click the button below to conclude the decision._"
-          }
-        },
-        {
-          "type": "message",
-          "id": "0f01e4e9-cb8f-4616-ba11-861179a295ec",
-          "config": {
-            "thread": {
-              "ref": "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data"
+               },
+               "id" : "2dcba2e9-0e22-413c-b6d0-3bff4fe59f85",
+               "type" : "message"
             },
-            "has_button": false,
-            "message_text": ":female-judge: _Thank you folks. This consent-based decision workflow has concluded._"
-          }
-        },
-        {
-          "type": "message",
-          "id": "7fc4ac69-7017-4344-93c1-e27f4838345a",
-          "config": {
-            "channel": {
-              "ref": "c63bdcf6-a658-4eca-81f1-5533b4fffe06==channel"
+            {
+               "config" : {
+                  "delivery_button_label" : "Open Form",
+                  "delivery_message_text" : "To propose something, please fill out this :pencil: . Itâs _super_ brief.",
+                  "dialog_elements" : [
+                     {
+                        "data_source" : "channels",
+                        "label" : "Which channel & team is your proposal for? (e.g. #t_<team>_gov)",
+                        "name" : "21e6196e-baf5-492f-aafc-bda010c1c735",
+                        "optional" : false,
+                        "type" : "select",
+                        "value" : "C3X4KU0NM"
+                     },
+                     {
+                        "label" : "What's the title of this proposal?",
+                        "name" : "b16af69f-3715-43c5-9e5e-7d6a89be5b36",
+                        "optional" : false,
+                        "placeholder" : "",
+                        "subtype" : "",
+                        "type" : "text"
+                     },
+                     {
+                        "label" : "What is the background of your tension?",
+                        "name" : "0ed7d56b-4cbc-4637-ac12-61fd03034f6c",
+                        "optional" : false,
+                        "type" : "textarea"
+                     },
+                     {
+                        "label" : "Link to proposal document:",
+                        "name" : "6be0a3f5-1494-4d06-9fb0-d04b673228df",
+                        "optional" : false,
+                        "placeholder" : "",
+                        "subtype" : "",
+                        "type" : "text"
+                     }
+                  ],
+                  "dialog_submit_label" : "",
+                  "dialog_title" : "Consent-based Proposal",
+                  "user" : {
+                     "ref" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
+                  }
+               },
+               "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a",
+               "type" : "dialog"
             },
-            "has_button": false,
-            "message_text": ":female-judge: _A consent-based decision started by {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} and taking place in {{e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel}} has concluded._\n\n\n:link: {{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}\n\n\n:speech_balloon: *Background*\n&gt; {{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\n\n\n:speech_balloon:  *Amendments &amp; Clarifications Summary*\n&gt; {{db19a140-6b9b-40f5-908f-51525c47cc56==d48ab143-b24b-4271-adc7-a1f3a17cf409==text}}\n\n\n:speech_balloon:  *Any Objections?*\n&gt; {{211d6544-b4b3-4a55-a7e9-ccfcff02dabd==e894375d-33b5-47e0-a668-66f1e51f2522==text}}"
-          }
-        }
-      ]
-    }
-  }
+            {
+               "config" : {
+                  "channel" : {
+                     "ref" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==channel"
+                  },
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "name" : "female-judge",
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true,
+                                       "italic" : true
+                                    },
+                                    "text" : "New decision started by ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "style" : {
+                                       "bold" : true,
+                                       "italic" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true,
+                                       "italic" : true
+                                    },
+                                    "text" : " in ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "channel",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel",
+                                    "property" : "",
+                                    "style" : {
+                                       "bold" : true,
+                                       "italic" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true,
+                                       "italic" : true
+                                    },
+                                    "text" : " concerning â",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "text" : "â",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 }
+                              ],
+                              "type" : "rich_text_quote"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "Go check it out!",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : ":female-judge: New decision started by {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} in {{e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel}} concerning â{{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}â\n\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\n\nGo check it out!"
+               },
+               "id" : "8f4a322f-3782-4486-8eb2-252b2d0208f1",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "channel" : {
+                     "ref" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel"
+                  },
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "name" : "female-judge",
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "hear ye, hear ye â we have a new consent-based decision to make brought to us by ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : ". ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "speech_balloon",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " *Background*\n",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 }
+                              ],
+                              "type" : "rich_text_quote"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "And, hereâs a link to the written proposal:",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "link",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : "  ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "Governance will proceed in this thread",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "point_down",
+                                    "type" : "emoji"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : ":female-judge: {{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}\n\nhear ye, hear ye â we have a new consent-based decision to make brought to us by {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}}.\n\n:speech_balloon: *Background*\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\n\nAnd, hereâs a link to the written proposal: :link:  {{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}\n\nGovernance will proceed in this thread :point_down:"
+               },
+               "id" : "18005004-ae5b-4bb9-99f9-df47b919ab47",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "channel" : {
+                     "value" : "C02GAGFLFBP"
+                  },
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "message_data",
+                                    "id" : "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "channel",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\nClarifying Questions",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : "{{18005004-ae5b-4bb9-99f9-df47b919ab47==message_data}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}\n{{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}\nClarifying Questions"
+               },
+               "id" : "7a8eb537-4d80-40e4-b53c-8cb4457a8d94",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "name" : "female-judge",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "question",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "Letâs begin by asking clarifying questions.",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "What questions do you have that could help you understand ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : " âs tensions or proposal better?",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "nerd_face",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "your questions should clarify, not socratically introduce new suggestions or ideas. Save those for your own proposal!",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "text" : "Clarifying Questions",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "point_down",
+                                    "type" : "emoji"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : ":female-judge: :question:Letâs begin by asking clarifying questions.\n\nWhat questions do you have that could help you understand {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}}âs tensions or proposal better?\n\n:nerd_face: your questions should clarify, not socratically introduce new suggestions or ideas. Save those for your own proposal!\n\n\nClarifying Questions :point_down:",
+                  "thread" : {
+                     "ref" : "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data"
+                  }
+               },
+               "id" : "27fb5f6d-1da8-4783-aad6-eeaa5cad98aa",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "button_label" : "Proceed to Reactions",
+                  "has_button" : true,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "name" : "female-judge",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : "  ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "When youâre ready to continue your decision pertaining toâ¦",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 }
+                              ],
+                              "type" : "rich_text_quote"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "â¦click the button below:",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : ":female-judge:  {{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}\nWhen youâre ready to continue your decision pertaining toâ¦\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\nâ¦click the button below:",
+                  "user" : {
+                     "ref" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
+                  }
+               },
+               "id" : "94b73fd5-e6a3-4c7d-a386-c3d574ec23fa",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "channel" : {
+                     "value" : "C02GAGFLFBP"
+                  },
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "message_data",
+                                    "id" : "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "channel",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\nReactions",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : "{{18005004-ae5b-4bb9-99f9-df47b919ab47==message_data}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}\n{{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}\nReactions"
+               },
+               "id" : "107e0238-bcb1-4df9-af05-6ce6d4aafa0f",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "has_button" : false,
+                  "message_text" : ":female-judge: _ok, {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} has told me itâs time to move on to collecting reactions_.\n\n_What are your reactions to this proposal? You can say anything you wish._\n\n*Reactions* :point_down:",
+                  "thread" : {
+                     "ref" : "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data"
+                  }
+               },
+               "id" : "c3069ab8-0b7c-4d1a-8527-946e6dc4f253",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "button_label" : "Proceed to Amend & Clarify",
+                  "has_button" : true,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "name" : "female-judge",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "When youâre ready to continue your decision pertaining toâ¦",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 }
+                              ],
+                              "type" : "rich_text_quote"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "â¦click the button below:",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : ":female-judge: {{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}\nWhen youâre ready to continue your decision pertaining toâ¦\n {{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\nâ¦click the button below:",
+                  "user" : {
+                     "ref" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
+                  }
+               },
+               "id" : "c28ffeb1-cb89-48f9-bd4b-ad05995af853",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "channel" : {
+                     "value" : "C02GAGFLFBP"
+                  },
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "message_data",
+                                    "id" : "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "channel",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\nAmend and Clarify",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : "{{18005004-ae5b-4bb9-99f9-df47b919ab47==message_data}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}\n{{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}\nAmend and Clarify"
+               },
+               "id" : "997a074c-7e3f-478c-9815-2118563dd901",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "delivery_button_label" : "Continue",
+                  "delivery_message_text" : ":female-judge: _Please edit your original proposal ({{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}) and when youâre finished, please click the button to continue:_",
+                  "dialog_elements" : [
+                     {
+                        "label" : "Summarize changes to your proposal, if any:",
+                        "name" : "d48ab143-b24b-4271-adc7-a1f3a17cf409",
+                        "optional" : false,
+                        "type" : "textarea"
+                     }
+                  ],
+                  "dialog_submit_label" : "",
+                  "dialog_title" : "Clarifications",
+                  "user" : {
+                     "ref" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
+                  }
+               },
+               "id" : "db19a140-6b9b-40f5-908f-51525c47cc56",
+               "type" : "dialog"
+            },
+            {
+               "config" : {
+                  "channel" : {
+                     "value" : "C02GAGFLFBP"
+                  },
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "message_data",
+                                    "id" : "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "channel",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\nObjections Test",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : "{{18005004-ae5b-4bb9-99f9-df47b919ab47==message_data}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}\n{{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}\nObjections Test"
+               },
+               "id" : "e46b79a4-a70c-4127-9d9e-86c4366cfa6a",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "name" : "female-judge",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : " has heard your questions and reactions and has provided the following summary of changes made to their original proposal:",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "db19a140-6b9b-40f5-908f-51525c47cc56==d48ab143-b24b-4271-adc7-a1f3a17cf409==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 }
+                              ],
+                              "type" : "rich_text_quote"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "female-judge",
+                                    "skin_tone" : 3,
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "name" : "exclamation",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true,
+                                       "italic" : true
+                                    },
+                                    "text" : "Are there any objections as to why this propsal wouldnât be safe to try?",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : " If you donât have an objections, please add the ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "no_entry_sign",
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : " reactji to this post. Otherwise, please respond withâ¦",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : "I object!",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_quote"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "â¦and ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : " can re-propose this decision during a synchronous meeting",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : ":female-judge: {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} has heard your questions and reactions and has provided the following summary of changes made to their original proposal:\n\n{{db19a140-6b9b-40f5-908f-51525c47cc56==d48ab143-b24b-4271-adc7-a1f3a17cf409==text}}\n\n:female-judge::skin-tone-3::exclamation: Are there any objections as to why this propsal wouldnât be safe to try? If you donât have an objections, please add the :no_entry_sign: reactji to this post. Otherwise, please respond withâ¦\n\nI object!\n\nâ¦and {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} can re-propose this decision during a synchronous meeting",
+                  "thread" : {
+                     "ref" : "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data"
+                  }
+               },
+               "id" : "04c74fde-e9b2-470c-95dc-2e43cb4baf63",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "delivery_button_label" : "Finish Consent Decision",
+                  "delivery_dialog_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "name" : "female-judge",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : "  ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "When you feel youâve given an adequate amount of time for objections, click the button below to conclude the decision.",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "delivery_message_text" : ":female-judge:  {{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}\n\nWhen you feel youâve given an adequate amount of time for objections, click the button below to conclude the decision.",
+                  "dialog_elements" : [
+                     {
+                        "data_source" : "static",
+                        "label" : "Where there any objections to your proposal?",
+                        "name" : "e894375d-33b5-47e0-a668-66f1e51f2522",
+                        "optional" : false,
+                        "options" : [
+                           {
+                              "label" : "No objections â decision accepted",
+                              "value" : "No objections â decision accepted"
+                           },
+                           {
+                              "label" : "There were objectons âÂ will resolve later",
+                              "value" : "There were objectons âÂ will resolve later"
+                           }
+                        ],
+                        "type" : "select",
+                        "value" : "No objections â decision accepted"
+                     }
+                  ],
+                  "dialog_submit_label" : "",
+                  "dialog_title" : "Consent Conclusion",
+                  "user" : {
+                     "ref" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user"
+                  }
+               },
+               "id" : "211d6544-b4b3-4a55-a7e9-ccfcff02dabd",
+               "type" : "dialog"
+            },
+            {
+               "config" : {
+                  "channel" : {
+                     "value" : "C02GAGFLFBP"
+                  },
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "message_data",
+                                    "id" : "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "channel",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "211d6544-b4b3-4a55-a7e9-ccfcff02dabd==e894375d-33b5-47e0-a668-66f1e51f2522==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : "{{18005004-ae5b-4bb9-99f9-df47b919ab47==message_data}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}\n{{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel}}\n{{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}\n{{211d6544-b4b3-4a55-a7e9-ccfcff02dabd==e894375d-33b5-47e0-a668-66f1e51f2522==text}}"
+               },
+               "id" : "5a20f689-2d28-47b0-8b61-9416a8a65098",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "has_button" : false,
+                  "message_text" : ":female-judge: _Thank you folks. This consent-based decision workflow has concluded._",
+                  "thread" : {
+                     "ref" : "18005004-ae5b-4bb9-99f9-df47b919ab47==message_data"
+                  }
+               },
+               "id" : "0f01e4e9-cb8f-4616-ba11-861179a295ec",
+               "type" : "message"
+            },
+            {
+               "config" : {
+                  "channel" : {
+                     "ref" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==channel"
+                  },
+                  "has_button" : false,
+                  "message_blocks" : [
+                     {
+                        "elements" : [
+                           {
+                              "elements" : [
+                                 {
+                                    "name" : "female-judge",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "A consent-based decision concerning â",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text",
+                                    "property" : "",
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : "â started by ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "user",
+                                    "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06==user",
+                                    "property" : "",
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : " and taking place in ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "channel",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel",
+                                    "property" : "",
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "style" : {
+                                       "italic" : true
+                                    },
+                                    "text" : " has concluded.",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "link",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 },
+                                 {
+                                    "text" : "\n\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "speech_balloon",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "text" : "Background",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 }
+                              ],
+                              "type" : "rich_text_quote"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "speech_balloon",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : "  ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "text" : "Amendments & Clarifications Summary",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : " ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "db19a140-6b9b-40f5-908f-51525c47cc56==d48ab143-b24b-4271-adc7-a1f3a17cf409==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 }
+                              ],
+                              "type" : "rich_text_quote"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "text" : "\n\n",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "name" : "speech_balloon",
+                                    "type" : "emoji"
+                                 },
+                                 {
+                                    "text" : "  ",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "style" : {
+                                       "bold" : true
+                                    },
+                                    "text" : "Any Objections?",
+                                    "type" : "text"
+                                 },
+                                 {
+                                    "text" : "\n",
+                                    "type" : "text"
+                                 }
+                              ],
+                              "type" : "rich_text_section"
+                           },
+                           {
+                              "elements" : [
+                                 {
+                                    "data_type" : "text",
+                                    "id" : "211d6544-b4b3-4a55-a7e9-ccfcff02dabd==e894375d-33b5-47e0-a668-66f1e51f2522==text",
+                                    "property" : "",
+                                    "type" : "workflowtoken"
+                                 }
+                              ],
+                              "type" : "rich_text_quote"
+                           }
+                        ],
+                        "type" : "rich_text"
+                     }
+                  ],
+                  "message_text" : ":female-judge: A consent-based decision concerning â{{e994019f-ff7d-47d6-aa45-d12bc234d74a==b16af69f-3715-43c5-9e5e-7d6a89be5b36==text}}â started by {{c63bdcf6-a658-4eca-81f1-5533b4fffe06==user}} and taking place in {{e994019f-ff7d-47d6-aa45-d12bc234d74a==21e6196e-baf5-492f-aafc-bda010c1c735==channel}} has concluded.\n\n\n:link: {{e994019f-ff7d-47d6-aa45-d12bc234d74a==6be0a3f5-1494-4d06-9fb0-d04b673228df==text}}\n\n\n:speech_balloon: Background\n {{e994019f-ff7d-47d6-aa45-d12bc234d74a==0ed7d56b-4cbc-4637-ac12-61fd03034f6c==text}}\n\n\n:speech_balloon:  Amendments &amp; Clarifications Summary\n {{db19a140-6b9b-40f5-908f-51525c47cc56==d48ab143-b24b-4271-adc7-a1f3a17cf409==text}}\n\n\n:speech_balloon:  Any Objections?\n{{211d6544-b4b3-4a55-a7e9-ccfcff02dabd==e894375d-33b5-47e0-a668-66f1e51f2522==text}}"
+               },
+               "id" : "7fc4ac69-7017-4344-93c1-e27f4838345a",
+               "type" : "message"
+            }
+         ],
+         "trigger" : {
+            "config" : {
+               "callback_id" : "f524541d-a0a1-445a-ae2b-0e6839bed5ba",
+               "channels" : [
+                  "CT5PJ469J"
+               ],
+               "description" : "Consent-based Governance",
+               "name" : "Consent-based Governance"
+            },
+            "id" : "c63bdcf6-a658-4eca-81f1-5533b4fffe06",
+            "type" : "channel_action"
+         },
+         "version" : "1"
+      },
+      "name" : "Consent-based Governance v2"
+   }
 }
